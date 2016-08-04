@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="la.netco.generated.model.model.impl.CiudadModelImpl">
+		<attributes>
+			<id name="id_ciudad" />
+			<basic name="nombre" />
+			<basic name="id_departamento" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="la.netco.generated.model.model.impl.DepartamentoModelImpl">
+		<attributes>
+			<id name="id_departamento" />
+			<basic name="nombre" />
+			<basic name="id_pais" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="la.netco.generated.model.model.impl.PaisModelImpl">
+		<attributes>
+			<id name="id_pais" />
+			<basic name="nombre" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="la.netco.generated.model.model.impl.SuscripcionModelImpl">
+		<attributes>
+			<id name="id_suscripcion" />
+			<basic name="nombres" />
+			<basic name="id_tipo_doc" />
+			<basic name="num_documento" />
+			<basic name="email" />
+			<basic name="direccion" />
+			<basic name="telefono" />
+			<basic name="id_ciudad" />
+			<basic name="nombres_contacto" />
+			<basic name="telefono_contacto" />
+			<basic name="medio" />
+			<basic name="tipo" />
+			<basic name="estado_pago" />
+			<basic name="valor_pagado" />
+			<basic name="tipo_persona" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="la.netco.generated.model.model.impl.TipoDocumentoModelImpl">
+		<attributes>
+			<id name="id_tipo_doc">
+				<column name="ID_TIPO" />
+			</id>
+			<basic name="nombre" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="la.netco.generated.model.model.impl.CiudadImpl" name="Ciudad">
+		<table name="GEO_CIUDAD" />
+		<attributes />
+	</entity>
+	<entity class="la.netco.generated.model.model.impl.DepartamentoImpl" name="Departamento">
+		<table name="GEO_DEPARTAMENTO" />
+		<attributes />
+	</entity>
+	<entity class="la.netco.generated.model.model.impl.PaisImpl" name="Pais">
+		<table name="GEO_PAIS" />
+		<attributes />
+	</entity>
+	<entity class="la.netco.generated.model.model.impl.SuscripcionImpl" name="Suscripcion">
+		<table name="suscripcion_Suscripcion" />
+		<attributes />
+	</entity>
+	<entity class="la.netco.generated.model.model.impl.TipoDocumentoImpl" name="TipoDocumento">
+		<table name="suscripcion_TipoDocumento" />
+		<attributes />
+	</entity>
+</entity-mappings>

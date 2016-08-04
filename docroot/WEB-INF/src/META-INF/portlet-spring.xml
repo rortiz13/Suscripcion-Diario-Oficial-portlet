@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="la.netco.generated.model.service.CiudadLocalService" class="la.netco.generated.model.service.impl.CiudadLocalServiceImpl" />
+	<bean id="la.netco.generated.model.service.persistence.CiudadPersistence" class="la.netco.generated.model.service.persistence.CiudadPersistenceImpl" parent="basePersistence" />
+	<bean id="la.netco.generated.model.service.DepartamentoLocalService" class="la.netco.generated.model.service.impl.DepartamentoLocalServiceImpl" />
+	<bean id="la.netco.generated.model.service.persistence.DepartamentoPersistence" class="la.netco.generated.model.service.persistence.DepartamentoPersistenceImpl" parent="basePersistence" />
+	<bean id="la.netco.generated.model.service.PaisLocalService" class="la.netco.generated.model.service.impl.PaisLocalServiceImpl" />
+	<bean id="la.netco.generated.model.service.persistence.PaisPersistence" class="la.netco.generated.model.service.persistence.PaisPersistenceImpl" parent="basePersistence" />
+	<bean id="la.netco.generated.model.service.SuscripcionLocalService" class="la.netco.generated.model.service.impl.SuscripcionLocalServiceImpl" />
+	<bean id="la.netco.generated.model.service.persistence.SuscripcionPersistence" class="la.netco.generated.model.service.persistence.SuscripcionPersistenceImpl" parent="basePersistence" />
+	<bean id="la.netco.generated.model.service.TipoDocumentoLocalService" class="la.netco.generated.model.service.impl.TipoDocumentoLocalServiceImpl" />
+	<bean id="la.netco.generated.model.service.persistence.TipoDocumentoPersistence" class="la.netco.generated.model.service.persistence.TipoDocumentoPersistenceImpl" parent="basePersistence" />
+</beans>

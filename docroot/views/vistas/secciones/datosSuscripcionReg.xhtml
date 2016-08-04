@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:liferay-ui="http://liferay.com/faces/ui" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" template="/views/layouts/template.xhtml"
+	xmlns:aui-cc="http://liferay.com/faces/aui-cc" xmlns:liferay-util="http://liferay.com/faces/util">
+	<ui:define name="cuerpo">
+
+		<h:panelGrid columns="1" columnClasses="columnaTitulos" styleClass="pnlTitulos">
+			<h:outputText value="#{i18n['DSCabecera']}" styleClass="lblTituloSecc" />
+		</h:panelGrid>
+
+		<div class="spacer20"></div>
+
+		<h:panelGrid id="pnlDatosSuscripcion" styleClass="pnlesInternos">
+
+			<h:panelGrid id="pnlInternoDS1" columns="1">
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna20,columna40,columna40">
+					<p:outputLabel for="medio" value="#{i18n['DSMedioSuscripcion']}" />
+					<p:selectOneRadio value="#{suscripcionBean.suscripcion.medio}" id="medio" required="true" >
+						<f:selectItem itemLabel="#{i18n['DSModoFisico']}" itemValue="fisico" />
+						<f:selectItem itemLabel="#{i18n['DSModoElec']}" itemValue="electronico" />
+					</p:selectOneRadio>
+					<p:graphicImage id="comObligatorio14" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna20,columna40,columna40">
+					<p:outputLabel for="tipo" value="#{i18n['DSTipoSuscripcion']}" />
+					<p:selectOneRadio value="#{suscripcionBean.suscripcion.tipo}"  id="tipo" required="true" >
+						<f:selectItem itemLabel="#{i18n['DSSuscNueva']}" itemValue="nueva" />
+						<f:selectItem itemLabel="#{i18n['DSRenovacion']}" itemValue="renovacion" />
+					</p:selectOneRadio>
+					<p:graphicImage id="comObligatorio15" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+			</h:panelGrid>
+
+
+			<h:panelGrid id="pnlInternoDS2" columns="2" width="100%" columnClasses="columna20,columna80">
+				<h:panelGrid width="100%" columns="1">
+					<liferay-ui:captcha />
+				</h:panelGrid>
+				<h:panelGrid columns="1" width="100%">
+					<p:outputLabel for="captcha" value="#{i18n['DSTxtoVerificacion']}" />
+					<h:panelGrid columns="2" width="40%">
+						<p:inputText inlineMessage="true" label="#{i18n['DSTxtoVerificacion']}" id="captcha" required="true" value="#{suscripcionBean.valueCaptcha}" >
+							<liferay-util:validateCaptcha label="#{i18n['DSTxtoVerificacion']}" for="inputText"  />
+						</p:inputText>
+						<p:commandButton value="#{i18n['actCaptcha']}" update="pnlInternoDS2" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:panelGrid>
+		</h:panelGrid>
+		<div class="spacer20"></div>
+
+	</ui:define>
+</ui:composition>

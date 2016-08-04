@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" template="/views/layouts/template.xhtml" xmlns:aui-cc="http://liferay.com/faces/aui-cc">
+	<ui:define name="cuerpo">
+
+		<h:panelGrid columns="1" columnClasses="columnaTitulos" styleClass="pnlTitulos">
+			<h:outputText value="#{i18n['DCCabecera']}" styleClass="lblTituloSecc" />
+		</h:panelGrid>
+
+		<h:panelGrid id="pnlDatosContactoV" columns="2" columnClasses="columna30,columna60" styleClass="pnlesInternosVis">
+
+				<h:outputLabel value="#{i18n['DCNombre']}" />
+				<h:outputLabel value="#{suscripcionBean.suscripcion.nombres_contacto}" />
+
+				<h:outputLabel value="#{i18n['DCTelContacto']}" />
+				<h:outputLabel value="#{suscripcionBean.suscripcion.telefono_contacto}" />
+
+		</h:panelGrid>
+
+	</ui:define>
+</ui:composition>

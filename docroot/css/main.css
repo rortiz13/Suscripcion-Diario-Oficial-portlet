@@ -1,0 +1,177 @@
+.portlet-msg-error {
+	font-style: italic;
+	font-weight: bold;
+	margin: 1px 0px 0px 0px;
+	padding: 1px 5px 1px 24px;
+}
+
+.portlet-msg-info {
+	font-style: italic;
+	margin: 1px 0px 0px 0px;
+	padding: 1px 5px 1px 24px;
+}
+
+.spacer20 {
+	height: 20px;
+}
+
+.pnlTitulos {
+	width: 95%;
+	margin-left: 2.5%;
+}
+
+.columnaTitulos {
+	border: 0px !important;
+	background: #009292 !important;
+	color: white;
+	text-align: left;
+}
+
+.lblTituloSecc {
+	font-family: Lucida Sans;
+	color: white;
+	font-size: 13px;
+	font-weight: normal;
+	margin-left: 1%;
+}
+
+.pnlesInternos {
+	width: 90%;
+	margin-left: 5%;
+}
+
+.pnlesInternos td {
+	width: 45%;
+	padding: 1%;
+}
+
+.pnlesInternosVis {
+	width: 90%;
+	margin-left: 5%;
+	background: #e8e8e8;
+	margin-top: 1%;
+}
+
+.pnlesInternosVis label {
+	margin-left: 5%;
+}
+
+.pnlesInternosVis td {
+	margin-left: 3%;
+	padding: 1% !important;
+}
+
+.columna20 {
+	width: 20% !important;
+	padding: 0% !important;
+}
+
+.columna30 {
+	width: 30% !important;
+	padding: 0% !important;
+}
+
+.columna40 {
+	width: 40% !important;
+	padding: 0% !important;
+}
+
+.columna50 {
+	width: 50% !important;
+	padding: 0% !important;
+}
+
+.columna60 {
+	width: 60% !important;
+	padding: 0% !important;
+}
+
+.columna80 {
+	width: 80% !important;
+	padding: 0% !important;
+}
+
+.columnaDer {
+	text-align: right;
+}
+
+.formGeneral {
+	width: 100%;
+}
+
+.formGeneral input.ui-inputfield {
+	border-radius: 0px !important;
+	border: 0.1em solid silver !important;
+	width: 95% !important;
+	background: white !important;
+	font: 1em Lucida sans !important;
+	box-shadow: inset 0 0px 0px #8f8f8f !important;
+}
+
+.formGeneral  label {
+	font-family: Lucida Sans;
+	font-weight: normal;
+	font-size: 12px;
+	color: black;
+}
+
+.formGeneral div.ui-selectonemenu {
+	width: 120px !important;
+	border: 1px solid silver !important;
+}
+
+.formGeneral div.ui-selectonemenu  label {
+	font-family: "Lucida Sans Unicode", "Lucida Grande",
+		sans-serif !important;
+	border: 0px !important;
+	font-weight: bold;
+	color: #006969;
+	box-shadow: inset 0 0px 0px #8f8f8f !important;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.28, rgb(224
+		, 224, 224) ), color-stop(1, rgb(255, 255, 255) ) ) !important;
+}
+
+.formGeneral div.ui-selectonemenu-trigger {
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.28, rgb(224
+		, 224, 224) ), color-stop(1, rgb(255, 255, 255) ) ) !important;
+	border-left-color: silver;
+}
+
+.formGeneral  button.ui-button {
+	border-radius: 0px !important;
+	background: #009292 !important;
+	color: white !important;
+	font-weight: normal !important;
+	font-family: "Lucida Sans Unicode", "Lucida Grande",
+		sans-serif !important;
+	font-size: 13px !important;
+	border: 0px !important;
+	-webkit-box-shadow: 0px 0px 0px #85b2cb, inset 0px 0px 0px #fff
+		!important;
+	box-shadow: 0px 0px 0px #85b2cb, inset 0px 0px 0px #fff !important;
+	width: 150px !important;
+	text-shadow: 0px 0px 0px !important;
+}
+
+.formGeneral table.ui-selectoneradio {
+	width: 100%;
+}
+
+.formGeneral table.ui-selectoneradio td {
+	width: auto;
+}
+
+.dialogoDetalle div.ui-dialog {
+	border: 1px solid silver !important;
+	border-radius: 0px !important;
+}
+
+.dialogoDetalle div.ui-dialog-titlebar {
+	background: #009292 !important;
+	color: white !important;
+	text-shadow: 0px 0px 0px !important;
+	font-family: "Lucida Sans Unicode", "Lucida Grande",
+		sans-serif !important;
+	font-size: 13px !important;
+	font-weight: normal !important;
+}

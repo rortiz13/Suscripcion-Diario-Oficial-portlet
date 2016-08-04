@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="la.netco.generated.model">
+	<author>smontanez</author>
+	<namespace>suscripcion</namespace>
+
+	<entity name="TipoDocumento" local-service="true" remote-service="false" json-enabled="false">
+		<column name="id_tipo_doc" type="int" primary="true" json-enabled="false" id-type="identity" convert-null="false" db-name="id_tipo"></column>
+		<column name="nombre" type="String" json-enabled="false" convert-null="false"></column>
+	</entity>
+
+	<entity name="Pais" local-service="true" remote-service="false" json-enabled="false" table="GEO_PAIS">
+		<column name="id_pais" type="int" primary="true" id-type="identity" json-enabled="false"></column>
+		<column name="nombre" type="String" json-enabled="false"></column>
+		<order>
+			<order-column name="nombre" order-by="asc"></order-column>
+		</order>
+	</entity>
+
+	<entity name="Departamento" local-service="true" remote-service="false" json-enabled="false" table="GEO_DEPARTAMENTO">
+		<column name="id_departamento" type="int" primary="true" id-type="identity" json-enabled="false"></column>
+		<column name="nombre" type="String" json-enabled="false"></column>
+		<column name="id_pais" type="int" json-enabled="false"></column>
+		<order>
+			<order-column name="nombre" order-by="asc"></order-column>
+		</order>
+		<finder name="pais" return-type="Collection">
+			<finder-column name="id_pais" comparator="="></finder-column>
+		</finder>
+	</entity>
+
+	<entity name="Ciudad" local-service="true" remote-service="false" json-enabled="false" table="GEO_CIUDAD">
+		<column name="id_ciudad" type="int" primary="true" id-type="identity" json-enabled="false"></column>
+		<column name="nombre" type="String" primary="false" json-enabled="false"></column>
+		<column name="id_departamento" type="int" json-enabled="false"></column>
+		<order>
+			<order-column name="nombre" order-by="asc"></order-column>
+		</order>
+		<finder name="departamento" return-type="Collection">
+			<finder-column name="id_departamento" comparator="="></finder-column>
+		</finder>
+	</entity>
+
+	<entity name="Suscripcion" local-service="true" remote-service="false" json-enabled="false" >
+		<column name="id_suscripcion" type="int" primary="true" json-enabled="false" id-type="increment"></column>
+		<column name="nombres" type="String" json-enabled="false"></column>
+		<column name="id_tipo_doc" type="int" json-enabled="false" convert-null="false"></column>
+		<column name="num_documento" type="String" json-enabled="false"></column>
+		<column name="email" type="String" json-enabled="false"></column>
+		<column name="direccion" type="String" json-enabled="false"></column>
+		<column name="telefono" type="String" json-enabled="false"></column>
+		<column name="id_ciudad" type="int" json-enabled="false" convert-null="true"></column>
+		
+		<column name="nombres_contacto" type="String" json-enabled="false"></column>
+		<column name="telefono_contacto" type="String" json-enabled="false"></column>
+		
+		<column name="medio" type="String" json-enabled="false"></column>
+		<column name="tipo" type="String" json-enabled="false"></column>
+		
+		<column name="estado_pago" type="String" json-enabled="false" convert-null="false"></column>
+		<column name="valor_pagado" type="String" json-enabled="false" convert-null="false"></column>
+
+		<column name="tipo_persona" type="int" json-enabled="false"></column>
+				
+		<finder name="Documento" return-type="Suscripcion" unique="true">
+            <finder-column name="num_documento" />
+        </finder>
+		
+	</entity>
+
+</service-builder>

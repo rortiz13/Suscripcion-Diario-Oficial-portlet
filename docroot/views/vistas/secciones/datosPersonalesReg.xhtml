@@ -1,0 +1,112 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+	template="/views/layouts/template.xhtml" xmlns:aui-cc="http://liferay.com/faces/aui-cc">
+	<ui:define name="cuerpo">
+
+		<h:panelGrid columns="1" columnClasses="columnaTitulos" styleClass="pnlTitulos">
+			<h:outputText value="#{i18n['DPCabecera']}" styleClass="lblTituloSecc" />
+		</h:panelGrid>
+
+		<div class="spacer20"></div>
+
+		<h:panelGrid id="pnlDatosPersonales" columns="2" styleClass="pnlesInternos">
+
+			<h:panelGrid id="pnlInternoDP1" columns="1">
+
+				<!-- register a PostValidateEvent -->
+					<f:event listener="#{suscripcionBean.validateEmail}" type="postValidate" />
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna30,columna50,columna20">
+					<p:outputLabel for="tipo_persona"  value="#{i18n['DPTipoPersona']}" />
+					<p:selectOneRadio value="#{suscripcionBean.suscripcion.tipo_persona}" id="tipo_persona" required="true">
+						<f:selectItem itemLabel="#{i18n['DPNatural']}" itemValue="0" />
+						<f:selectItem itemLabel="#{i18n['DPJuridica']}" itemValue="1" />
+					</p:selectOneRadio>
+					<p:graphicImage id="comObligatorio1" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<p:outputLabel for="nombres" value="#{i18n['DPRazonSocialNom']}" />
+				<h:panelGrid columns="2" width="100%" columnClasses="columna80,columna20">
+					<p:inputText value="#{suscripcionBean.suscripcion.nombres}" id="nombres" required="true"/>
+					<p:graphicImage id="comObligatorio2" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna40,columna40,columna20">
+					<p:outputLabel for="id_tipo_doc" value="#{i18n['DPTipoIdentificacion']}" />
+					<p:selectOneMenu value="#{suscripcionBean.suscripcion.id_tipo_doc}" id="id_tipo_doc" required="true">
+						<f:selectItem itemLabel="#{i18n['seleccione']}" />
+						<f:selectItems value="#{suscripcionBean.tipoDocumentoItems}" />
+					</p:selectOneMenu>
+					<p:graphicImage id="comObligatorio3" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<p:outputLabel for="id_num_doc" value="#{i18n['DPNoIdentificacion']}" />
+				<h:panelGrid columns="2" width="100%" columnClasses="columna80,columna20"  >
+					<p:inputText value="#{suscripcionBean.suscripcion.num_documento}" id="id_num_doc" />
+					<p:graphicImage id="comObligatorio4" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<p:outputLabel for="email" value="#{i18n['DPCorreoElec']}" />
+				<h:panelGrid columns="2" width="100%" columnClasses="columna80,columna20">
+					<p:inputText value="#{suscripcionBean.suscripcion.email}"  id="email"  required="true">
+						<f:validator validatorId="validator.emailValidator"></f:validator>
+					</p:inputText>
+					<p:graphicImage id="comObligatorio5" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<p:outputLabel for="confirmEmail" value="#{i18n['DPConfCorreoElec']}" />
+				<h:panelGrid columns="2" width="100%" columnClasses="columna80,columna20">
+					<p:inputText value="#{confirmEmail}" required="true"  id="confirmEmail" />
+					<p:graphicImage id="comObligatorio6" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+			</h:panelGrid>
+
+			<h:panelGrid id="pnlInternoDP2" columns="1">
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna40,columna40,columna20">
+					<p:outputLabel for="id_pais" value="#{i18n['DPPais']}" />
+					<p:selectOneMenu value="#{suscripcionBean.id_pais}" required="true"  id="id_pais">
+						<f:selectItem itemLabel="#{i18n['seleccione']}" />
+						<f:selectItems value="#{suscripcionBean.paisesItems}" />
+						<p:ajax update="id_departamento"  /> 
+					</p:selectOneMenu>
+					<p:graphicImage id="comObligatorio7" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna40,columna40,columna20">
+					<p:outputLabel for="id_departamento" value="#{i18n['DPDepartamento']}" />
+					<p:selectOneMenu value="#{suscripcionBean.id_departamento}" id="id_departamento" required="true">
+						<f:selectItem itemLabel="#{i18n['seleccione']}" />
+						<f:selectItems value="#{suscripcionBean.departametosItems}" />
+						<p:ajax update="id_ciudad"  /> 
+					</p:selectOneMenu>
+					<p:graphicImage id="comObligatorio8" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="3" width="100%" columnClasses="columna40,columna40,columna20">
+					<p:outputLabel for="id_ciudad" value="#{i18n['DPCiudad']}" />
+					<p:selectOneMenu value="#{suscripcionBean.suscripcion.id_ciudad}" id="id_ciudad" required="true">
+						<f:selectItem itemLabel="#{i18n['seleccione']}" />
+						<f:selectItems value="#{suscripcionBean.ciudadesItems}" />
+					</p:selectOneMenu>
+					<p:graphicImage id="comObligatorio9" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<p:outputLabel for="direccion" value="#{i18n['DPDireccionCorres']}" />
+				<h:panelGrid columns="2" width="100%" columnClasses="columna80,columna20">
+					<p:inputText value="#{suscripcionBean.suscripcion.direccion}" id="direccion"  required="true"/>
+					<p:graphicImage id="comObligatorio10" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+
+				<p:outputLabel for="telefono" value="#{i18n['DPTelContacto']}" />
+				<h:panelGrid columns="2" width="100%" columnClasses="columna80,columna20">
+					<p:inputText value="#{suscripcionBean.suscripcion.telefono}" id="telefono"  required="true" />
+					<p:graphicImage id="comObligatorio11" value="/views/imagenes/icon_obligatorio.png" alt="#{i18n['obligatorio']}" title="#{i18n['obligatorio']}" />
+				</h:panelGrid>
+			</h:panelGrid>
+
+		</h:panelGrid>
+
+	</ui:define>
+</ui:composition>

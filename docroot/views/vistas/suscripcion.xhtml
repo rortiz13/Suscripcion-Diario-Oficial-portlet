@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+	template="/views/layouts/template.xhtml" xmlns:aui-cc="http://liferay.com/faces/aui-cc">
+	<ui:define name="cuerpo">
+
+		<h:form id="formFlujoPpal" styleClass="formGeneral">
+
+			<p:wizard flowListener="#{suscripcionBean.procesoFlujo}"   showStepStatus="false" backLabel="#{i18n['regresar']}" nextLabel="#{i18n['continuar']}">
+
+				<p:tab id="registroSuscripcion" >
+
+					<p:messages />
+
+					<ui:include src="/views/vistas/secciones/datosPersonalesReg.xhtml"></ui:include>
+					<ui:include src="/views/vistas/secciones/datosContactoReg.xhtml"></ui:include>
+					<ui:include src="/views/vistas/secciones/datosSuscripcionReg.xhtml"></ui:include>
+
+				</p:tab>
+
+				<p:tab id="vistaSuscripcion">
+					<p:messages />
+					<ui:include src="/views/vistas/secciones/datosPersonalesVis.xhtml"></ui:include>
+					<ui:include src="/views/vistas/secciones/datosContactoVis.xhtml"></ui:include>
+					<ui:include src="/views/vistas/secciones/datosSuscripcionVis.xhtml"></ui:include>
+				</p:tab>
+
+			</p:wizard>
+
+		</h:form>
+		
+		<p:ajaxStatus onstart="PF('statusDialog').show();" onsuccess="PF('statusDialog').hide();" />
+
+		<p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false">
+			<p:graphicImage value="/views/imagenes/ajaxloadingbar.gif" />
+		</p:dialog>
+		
+
+	</ui:define>
+</ui:composition>

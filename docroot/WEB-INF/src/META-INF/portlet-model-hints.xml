@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="la.netco.generated.model.model.Ciudad">
+		<field name="id_ciudad" type="int" />
+		<field name="nombre" type="String" />
+		<field name="id_departamento" type="int" />
+	</model>
+	<model name="la.netco.generated.model.model.Departamento">
+		<field name="id_departamento" type="int" />
+		<field name="nombre" type="String" />
+		<field name="id_pais" type="int" />
+	</model>
+	<model name="la.netco.generated.model.model.Pais">
+		<field name="id_pais" type="int" />
+		<field name="nombre" type="String" />
+	</model>
+	<model name="la.netco.generated.model.model.Suscripcion">
+		<field name="id_suscripcion" type="int" />
+		<field name="nombres" type="String" />
+		<field name="id_tipo_doc" type="int" />
+		<field name="num_documento" type="String" />
+		<field name="email" type="String" />
+		<field name="direccion" type="String" />
+		<field name="telefono" type="String" />
+		<field name="id_ciudad" type="int" />
+		<field name="nombres_contacto" type="String" />
+		<field name="telefono_contacto" type="String" />
+		<field name="medio" type="String" />
+		<field name="tipo" type="String" />
+		<field name="estado_pago" type="String" />
+		<field name="valor_pagado" type="String" />
+		<field name="tipo_persona" type="int" />
+	</model>
+	<model name="la.netco.generated.model.model.TipoDocumento">
+		<field name="id_tipo_doc" type="int" />
+		<field name="nombre" type="String" />
+	</model>
+</model-hints>
